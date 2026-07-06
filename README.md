@@ -40,7 +40,7 @@ async function formSubmitted(e) {
   MailApp.sendEmail(mailObject)
 }
 
-async function sendSeminderEmails() {
+async function sendReminderEmails() {
   let form = FormApp.getActiveForm()
   let mailObjects = await Loaf.LoafServiceRemindEmailForMembersAndGuests(form, club, "", true)
 
@@ -70,7 +70,7 @@ async function formSubmitted(e) {
   MailApp.sendEmail(mailObject)
 }
 
-async function sendSeminderEmails() {
+async function sendReminderEmails() {
   let form = FormApp.getActiveForm()
   let mailObjects = await Loaf.SeedServiceRemindEmailForGuestSeeds(form, club)
 
@@ -82,8 +82,37 @@ async function sendSeminderEmails() {
 
 ### Set Up Triggers 
 
-```
+1. Form submission trigger
+Triggers > + Add Trigger 
 
-```
+Select `formSubmitted` function to run
+
+Change event type to `On form submit`
+
+Click Save
+
+2. Email Reminder Trigger
+Triggers > + Add Trigger 
+
+Select `sendReminderEmails` function to run
+
+Change event source to `Time-driven`
+
+Change type of time-based trigger to `Week timer`
+
+Change day of week to the day of your meeting
+
+Change time of day to the hour you want the reminder to go out.
+
+Click Save
+
+**note: Time of day is dependent on the timezone.  To check the timezome of your script, go to. Project Settings and change it.
 
 ### Linked Sheet
+
+
+
+
+
+
+
