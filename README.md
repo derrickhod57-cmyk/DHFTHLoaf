@@ -102,14 +102,24 @@ Change type of time-based trigger to `Week timer`
 
 Change day of week to the day of your meeting
 
-Change time of day to the hour you want the reminder to go out.
+Change time of day to the hour you want the reminder to go out. (**note: The trigger will go out based on the value of the hour you choose.  Be aware that it is in respect to the timezone shown at the bottom.  For example if it says GMT-8 then thats probably PST.)
 
 Click Save
 
-**note: Time of day is dependent on the timezone.  To check the timezome of your script, go to. Project Settings and change it.
 
 ### Linked Sheet
+Go to your Form and click on the "Responses" Tab.  Click on "View in Sheets".  If it hasn't been created it will ask you to create.  
 
+When `LoafServiceRemindEmailForMembersAndGuests` is called, the email will contain a link to that spreadsheet, but only to members.  The guests wouldn't get it.
+
+When `SeedServiceRemindEmailForGuestSeeds` is called, the email will contain the link to that spreadshet, but only to the primary contact email.  Everyonesle wouldn't get it.
+
+### Debug run
+At the top of the editor, click the dropdown and select, `sendReminderEmails`.  If that option isn't there, you may need to save first.
+
+Then click run.  If this is the first time, you will need to grant permissions. A window will open up.  Click on "unsafe" or "Advanced" link.  It will show you what permissions it needs to run.  Select all of them then continue.  
+
+If everything went as planned, your club should have gotten a nice email reminder about the upcoming meeting!
 
 
 
